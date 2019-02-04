@@ -1,7 +1,7 @@
 $(function() {
     $(".eat").on("click", function(event) {
         var id = $(this).data("id");
-        var eaten = $(this).data("true");
+        var eaten = $(this).data(true);
         var burgEaten = {
             burger_eaten: eaten
         };

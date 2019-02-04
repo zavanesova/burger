@@ -18,6 +18,7 @@ router.get("/api/burgers", function(req, res) {
     })
 })
 
+//put/post requests not working for some reason
 router.post("/api/burgers", function(req, res) {
     burger.insertOne(["burger_name", "burger_eaten"], [req.body.burger_name, req.body,burger_eaten], function(data) {
         res.json(data);
@@ -41,8 +42,27 @@ router.put("/api/burgers/:id", function(req, res) {
     burger.updateOne({
         burger_eaten: req.body.burger_eaten
     }, condition, function(data) {
-        res.json(data);
+        if (data.changedRows == 0) {
+            // If no rows were changed, then the ID must not exist, so 404
+            return res.status(404).end();
+          } else {
+            res.status(200).end();
+          }
     });
+    // burger.updateOne({
+    //     burger_eaten: req.body.burger_eaten
+    // },{
+    //     where: {
+    //         condition
+    //     }
+    // }).then(function(data){
+    //     if (data.changedRows == 0) {
+    //         // If no rows were changed, then the ID must not exist, so 404
+    //         return res.status(404).end();
+    //       } else {
+    //         res.status(200).end();
+    //       }
+    // });
 });
 
 module.exports= router;
