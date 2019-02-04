@@ -1,0 +1,38 @@
+body{
+    background-image: url("/assets/img/light-veneer.png");
+}
+h1{
+    display: block;
+    margin-left: 35%;
+    margin-right: 33%;
+    width: 50%;
+    font-size: 60px
+}
+.pic{
+    float: center;
+    margin-left: 10%;
+    margin-right: auto;
+    width: 40%;
+}
+.list{
+    float: left;
+}
+.eaten-list{
+    float: right;
+}
+.eaten{
+    float: right;
+    margin-right: 10%;
+}
+.center{
+    display: block;
+    margin-left: 42%;
+    margin-right: 33%;
+    width: 50%;
+}
+.create-form{
+    display: block;
+    margin-left: 40%;
+    margin-right: 33%;
+    width: 50%;
+}
