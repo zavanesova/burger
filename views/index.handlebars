@@ -4,8 +4,8 @@
 
 <ol class = "list">
     {{#each burgers}}
-      {{#unless eaten}}
-        {{>burger-buttons eaten=false}}
+      {{#unless burger_eaten}}
+        {{>burger-buttons}}
         <br>
       {{/unless}}
     {{/each}}
@@ -15,8 +15,8 @@
 
 <ol class="eaten-list">
     {{#each burgers}}
-      {{#if eaten}}
-        {{> burger-buttons eaten=true}}
+      {{#if burger_eaten}}
+        {{>burger-buttons}}
       {{/if}}
     {{/each}}  
 </ol>
