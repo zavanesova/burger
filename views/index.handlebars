@@ -10,8 +10,8 @@
       {{/unless}}
     {{/each}}
 </ol>
-
-<h2 class="eaten">Eaten Burgers</h2>
+<div class="eaten">
+  <h2>Eaten Burgers</h2>
 
 <ol class="eaten-list">
     {{#each burgers}}
@@ -20,6 +20,7 @@
       {{/if}}
     {{/each}}  
 </ol>
+</div>
 
 <h2 class="center">Add a Burger!</h2>
 
@@ -28,5 +29,5 @@
     <label for="add-burger">Burger Name</label>
     <input type="text" id="add-burger" name="name">
   </div>
-   <button type="submit">Add Burger</button>
+   <button type="submit" class="submit-new">Add Burger</button>
 </form>

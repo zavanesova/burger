@@ -22,20 +22,24 @@ router.get("/api/burgers", function(req, res) {
 router.post("/api/burgers", function(req, res) {
     console.log("eaten", req.body.burger_eaten);
     console.log("name", req.body.burger_name);
-    burger.insertOne(["burger_name", "burger_eaten"], [req.body.burger_name, req.body.burger_eaten], function(data) {
-        res.json(data);
+    burger.insertOne([
+        "burger_name", "burger_eaten"
+    ], [
+        req.body.burger_name, req.body.burger_eaten
+    ], function(result) {
+        res.json({ id: result.insertId });
     });
 });
 
-router.post("/api/burgers", function(req, res) {
-    burger.insertOne([
-        "burger_name", "burger_eaten"
-    ],[
-        req.body.burger_name, req.body.burger_eaten
-    ], function(data) {
-        res.json({ id: data.insertId });
-    });
-});
+// router.post("/api/burgers", function(req, res) {
+//     burger.insertOne([
+//         "burger_name", "burger_eaten"
+//     ],[
+//         req.body.burger_name, req.body.burger_eaten
+//     ], function(data) {
+//         res.json(data);
+//     });
+// });
 
 router.put("/api/burgers/:id", function(req, res) {
     var condition = req.params.id;

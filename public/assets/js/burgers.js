@@ -1,10 +1,13 @@
 $(function() {
     $(".eat").on("click", function(event) {
         var id = $(this).data("id");
-        // var eaten = $(this).data('eaten');
+        var name = $(this).data("burger_name");
+        var eaten = $(this).data('eaten');
         // console.log("testtttt", eaten);
         var burgEaten = {
-            burger_eaten: true
+            id: id,
+            burger_name: name,
+            burger_eaten: eaten
         };
         console.log(burgEaten);
 
@@ -18,13 +21,15 @@ $(function() {
         );
     });
 
-    $(".create-form").on("submit", function(event) {
+    $(".submit-new").on("click", function(event) {
         event.preventDefault();
 
         var newBurger = {
+
             burger_name: $("#add-burger").val().trim(),
-            burger_eaten: false
+            burger_eaten: 0
         };
+        console.log(newBurger);
 
         //post request not working
         $.ajax("/api/burgers", {

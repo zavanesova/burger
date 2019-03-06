@@ -19,6 +19,8 @@ h1{
 }
 .eaten-list{
     float: right;
+    display: block;
+
 }
 .eaten{
     float: right;
